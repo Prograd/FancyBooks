@@ -1,13 +1,7 @@
 from django.db import models
 
-from billings.models import Order
-
-
-class Category(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
+from billings.models.order import Order
+from products.models.category import Category
 
 
 class Book(models.Model):

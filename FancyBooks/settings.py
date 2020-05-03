@@ -37,11 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'graphene_django',
     'products.apps.ProductsConfig',
-    'billings.apps.BillingsConfig'
+    'billings.apps.BillingsConfig',
+    'graphqlAPI.apps.GraphqlapiConfig'
 ]
 
 GRAPHENE = {
-    'SCHEMA': 'FancyBooks.schema.schema',
+    'SCHEMA': 'graphqlAPI.schema.schema',
     'MIDDLEWARE': [
         'graphene_django.debug.DjangoDebugMiddleware',
     ]
@@ -123,3 +124,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEST_RUNNER = 'snapshottest.django.TestRunner'
