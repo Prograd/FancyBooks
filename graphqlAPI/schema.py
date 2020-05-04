@@ -1,7 +1,9 @@
 import graphene
+import graphql_jwt
 from graphene_django.debug import DjangoDebug
 
 from graphqlAPI.mutations.billing_create import BillingCreate
+from graphqlAPI.mutations.user_create import CreateUser
 from graphqlAPI.types.book import Book
 from graphqlAPI.types.category import Category
 from graphqlAPI.types.order import Order
@@ -11,7 +13,11 @@ from billings.models.order import Order as OrderModel
 
 
 class Mutation(graphene.ObjectType):
+    token_auth = graphql_jwt.ObtainJSONWebToken.Field()
+    verify_token = graphql_jwt.Verify.Field()
+    refresh_token = graphql_jwt.Refresh.Field()
     create_billing = BillingCreate.Field()
+    create_user = CreateUser.Field()
 
 
 class Query(graphene.ObjectType):
