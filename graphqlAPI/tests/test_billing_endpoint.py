@@ -5,18 +5,23 @@ from graphqlAPI import schema
 from graphqlAPI.tests.data import initialize
 
 
-class CategoryEndpointTest(TestCase):
+class UserEndpointTest(TestCase):
 
-    def test_get_all_categories(self):
+    def test_create_billing(self):
         initialize()
         client = Client(schema.schema)
         self.assertMatchSnapshot(client.execute('''
-            {
-              categories {
-                id
-                name
-                bookSet{
+            mutation {
+              createBilling(bookIds: [1, 2, 3]) {
+                billing {
                   id
+                  status
+                  order {
+                    id
+                    bookSet {
+                      id
+                    }
+                  }
                 }
               }
             }

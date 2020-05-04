@@ -2,7 +2,7 @@ from graphene.test import Client
 from snapshottest.django import TestCase
 
 from graphqlAPI import schema
-from graphqlAPI.data import initialize
+from graphqlAPI.tests.data import initialize
 
 
 class BookEndpointTest(TestCase):

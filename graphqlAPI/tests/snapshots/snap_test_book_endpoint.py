@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 from snapshottest import Snapshot
 
+
 snapshots = Snapshot()
 
 snapshots['BookEndpointTest::test_get_all_books 1'] = {
@@ -21,7 +22,7 @@ snapshots['BookEndpointTest::test_get_all_books 1'] = {
                 'language': 'en-gb',
                 'pageCount': 0,
                 'price': 0.0,
-                'publishedDate': '2020-05-03',
+                'publishedDate': '2020-05-04',
                 'publisher': 'test',
                 'subtitle': 'test sub',
                 'thumbnailUrl': 'https://test.test',
@@ -39,7 +40,7 @@ snapshots['BookEndpointTest::test_get_all_books 1'] = {
                 'language': 'en-gb',
                 'pageCount': 67,
                 'price': 79.23,
-                'publishedDate': '2020-05-03',
+                'publishedDate': '2020-05-04',
                 'publisher': 'test',
                 'subtitle': 'test sub',
                 'thumbnailUrl': 'https://test.test',
@@ -57,7 +58,7 @@ snapshots['BookEndpointTest::test_get_all_books 1'] = {
                 'language': 'en-gb',
                 'pageCount': 134,
                 'price': 158.46,
-                'publishedDate': '2020-05-03',
+                'publishedDate': '2020-05-04',
                 'publisher': 'test',
                 'subtitle': 'test sub',
                 'thumbnailUrl': 'https://test.test',
