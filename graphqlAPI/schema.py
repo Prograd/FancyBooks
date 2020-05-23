@@ -33,6 +33,9 @@ class Query(graphene.ObjectType):
         return CategoryModel.objects.all()
 
     def resolve_orders(self, info):
+        user = info.context.user
+        if user.is_anonymous:
+            raise Exception('Not logged in!')
         return OrderModel.objects.all()
 
 

@@ -14,7 +14,7 @@ def initialize():
             title='test book',
             subtitle='test sub',
             publisher='test',
-            published_date=datetime.now(),
+            published_date=datetime.strptime("2019-12-12", "%Y-%m-%d").date(),
             description='test description',
             page_count=67 * i,
             thumbnail_url='https://test.test',
