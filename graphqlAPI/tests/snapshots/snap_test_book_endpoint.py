@@ -11,6 +11,7 @@ snapshots['BookEndpointTest::test_get_all_books 1'] = {
     'data': {
         'books': [
             {
+                'amount': 0,
                 'authors': 'test test',
                 'categories': [
                     {
@@ -29,6 +30,7 @@ snapshots['BookEndpointTest::test_get_all_books 1'] = {
                 'title': 'test book'
             },
             {
+                'amount': 0,
                 'authors': 'test test',
                 'categories': [
                     {
@@ -47,6 +49,7 @@ snapshots['BookEndpointTest::test_get_all_books 1'] = {
                 'title': 'test book'
             },
             {
+                'amount': 0,
                 'authors': 'test test',
                 'categories': [
                     {

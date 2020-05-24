@@ -24,6 +24,7 @@ class BookEndpointTest(TestCase):
                 language
                 authors
                 price
+                amount
                 categories {
                   id
                 }
