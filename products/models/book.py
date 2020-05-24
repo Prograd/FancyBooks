@@ -17,6 +17,7 @@ class Book(models.Model):
     price = models.FloatField(default=0.00)
     categories = models.ManyToManyField(Category)
     orders = models.ForeignKey(Order, on_delete=models.DO_NOTHING, null=True)
+    amount = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
