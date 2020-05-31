@@ -12,13 +12,13 @@ class UserEndpointTest(TestCase):
         client = Client(schema.schema)
         self.assertMatchSnapshot(client.execute('''
             mutation {
-              createBilling(bookIds: [1, 2, 3]) {
+              createBilling(books: [{id: 1, amount: 2}, {id: 2, amount: 2}, {id: 3, amount: 3}]) {
                 billing {
                   id
                   status
                   order {
                     id
-                    bookSet {
+                    books {
                       id
                     }
                   }

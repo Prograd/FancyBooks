@@ -1,13 +1,14 @@
 from django.utils.datetime_safe import datetime
 
-from billings.models.utils.billing_util import BillingUtil
+from billings.models.billing import Billing
+from billings.models.order import Order
 from products.models.book import Book
 from products.models.category import Category
 
 
 def initialize():
     test_category = Category.objects.create(name='test')
-    books_ids = []
+    order = Order.objects.create()
     for i in range(3):
         book = Book.objects.create(
             id=i + 1,
@@ -22,8 +23,12 @@ def initialize():
             authors='test test',
             price=79.23 * i
         )
-        books_ids.append(book.id)
+        order.add_book(book=book)
         test_category.book_set.add(
             book
         )
-    BillingUtil.create_billing(books_ids)
+
+    Billing.objects.create(
+        status="Created",
+        order=order
+    )
