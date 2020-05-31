@@ -1,6 +1,5 @@
 from django.db import models
 
-from billings.models.order import Order
 from products.models.category import Category
 
 
@@ -16,7 +15,6 @@ class Book(models.Model):
     authors = models.CharField(max_length=300)
     price = models.FloatField(default=0.00)
     categories = models.ManyToManyField(Category)
-    orders = models.ForeignKey(Order, on_delete=models.DO_NOTHING, null=True)
     amount = models.IntegerField(default=0)
 
     def __str__(self):

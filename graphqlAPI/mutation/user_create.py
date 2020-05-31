@@ -1,7 +1,7 @@
 import graphene
 from django.contrib.auth import get_user_model
 
-from graphqlAPI.types.user import User
+from graphqlAPI.mutation.types.user import User
 
 
 class CreateUser(graphene.Mutation):
