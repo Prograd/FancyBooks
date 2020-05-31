@@ -1,5 +1,4 @@
 import graphene
-from graphene_django.debug import DjangoDebug
 
 from graphqlAPI.query.types.book import Book
 from graphqlAPI.query.types.category import Category
@@ -15,7 +14,6 @@ class Query(graphene.ObjectType):
     books = graphene.List(Book)
     categories = graphene.List(Category)
     orders = graphene.List(Order)
-    debug = graphene.Field(DjangoDebug, name='_debug')
 
     def resolve_books(self, info):
         return BookModel.objects.all()

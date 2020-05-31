@@ -1,5 +1,3 @@
-from unittest.mock import MagicMock
-
 from django.test import TestCase
 
 from billings.models.billing import Billing
@@ -20,7 +18,7 @@ class BillingOfInputTest(TestCase):
 
     def test_should_create_order_and_billing_from_input(self):
         """
-        It's should create order with given books ids
+        It's should create order with given book input
         and connect it with new billing
         """
         billing = Billing.of_input(self.books_inputs)
