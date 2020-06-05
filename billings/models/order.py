@@ -1,3 +1,5 @@
+from functools import reduce
+
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Sum, F
@@ -19,6 +21,13 @@ class Order(models.Model):
         if amount is None:
             amount = 1
         OrderBook.objects.create(order=self, book=book, amount=amount)
+
+    def books_ids(self):
+        # TODO It can be done better way, probably all should be done on ORM site
+        books_ids = list(self.books.all().values_list('order__orderbook__book_id', flat=True).distinct())
+        if not books_ids:
+            return ''
+        return str(reduce(lambda prev, id: str(prev) + ', ' + str(id), books_ids))
 
     @property
     def order_price(self):
